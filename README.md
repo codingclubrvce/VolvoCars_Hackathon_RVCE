@@ -32,10 +32,15 @@ To submit your project, follow these steps:
 
    - Go to your forked repository on GitHub.
    - Click on the branch option beside the dropdown menu (usually says `main` or `master`).
+
    ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch1.jpeg))
+
    - Select "New Branch" and then type the name of your new branch (format should be: `team-name`) and press Enter.
+
    ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch2.jpeg))
+
    - After creation of new branch, click on the branch name to open it
+
    ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch3.jpeg))
 
 4. **Add Your Code**
