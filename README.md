@@ -47,7 +47,7 @@ To submit your project, follow these steps:
 
    - To **add new files**, click the "Add file" button, select "Upload files," drag and drop your project files, and commit the changes.
    - To **edit existing files**, navigate to the file, click the pencil icon to edit, make your changes, and commit the changes.
-
+   - Commit the changes directly to your branch
 
 5. **Open a Pull Request**
 
@@ -55,7 +55,14 @@ To submit your project, follow these steps:
    - Click the "Pull requests" tab, then click "New pull request."
    - Ensure the base repository is `codingclubrvce/VolvoCars_Hackathon_RVCE` and the base branch is `main`.
    - Set the head repository to your forked repo and the compare branch to your new branch (i.e., `team-name`).
-   - Click "Create pull request."
-   - Provide a title and description for your pull request (project), then click "Create pull request."
 
-   ![Open a Pull Request](link-to-open-pr-screenshot)
+   ![Open a Pull Request](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/pr1.jpeg)
+
+   - Click "Create pull request."
+   - In title, enter your team name and title of your project
+   - In Description, enter the following:
+     <ul>Project Description</ul>
+     <ul>Tech Stacks used</ul>
+     <ul>Additional info/comments (if any)</ul>
+
+   - Finally, click on Create Pull Request.
