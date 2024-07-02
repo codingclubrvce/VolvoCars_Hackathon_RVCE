@@ -47,7 +47,8 @@ To submit your project, follow these steps:
    - Go to your forked repository on GitHub.
    - Click the "Pull requests" tab, then click "New pull request."
    - Ensure the base repository is `codingclubrvce/VolvoCars_Hackathon_RVCE` and the base branch is `main`.
-   - Set the head repository to your fork and the compare branch to your new branch (i.e., `team-name`).
+   - Set the head repository to your forked repo and the compare branch to your new branch (i.e., `team-name`).
    - Click "Create pull request."
    - Provide a title and description for your pull request (project), then click "Create pull request."
+
    ![Open a Pull Request](link-to-open-pr-screenshot)
