@@ -25,7 +25,7 @@ To submit your project, follow these steps:
    - Navigate to the repository: [Volvo Hackathon @ RVCE](https://github.com/codingclubrvce/Volvo_Hack_RVCE.git)
    - Click on the `Fork` button in the upper right corner of the page to create a copy of the repository in your GitHub account.
 
-   ![Fork the Repository](link-to-fork-screenshot)
+   ![Fork the Repository](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/screenshots/fork.jpeg)
 
 2. **Create a Branch**
 
