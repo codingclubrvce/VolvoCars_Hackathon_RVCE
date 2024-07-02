@@ -11,7 +11,7 @@ We are excited to see your innovative solutions. Please follow the instructions 
 - [License](#license)
 
 ## Code of Conduct
-Please make sure to read and adhere to our [Code of Conduct]([link-to-code-of-conduct-file](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE/blob/main/CODE_OF_CONDUCT.md)).
+Please make sure to read and adhere to our [Code of Conduct](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE/blob/main/CODE_OF_CONDUCT.md).
 
 ## Rules
 Please review the [Hackathon Rules](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE/blob/main/RULES.md) before submitting your project.
