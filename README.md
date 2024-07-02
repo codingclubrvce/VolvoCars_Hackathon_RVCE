@@ -29,22 +29,25 @@ To submit your project, follow these steps:
 
 2. **Create a Branch**
 
+   - Go to your forked repository on GitHub.
+   - Click on the branch dropdown menu (usually says `main` or `master`).
+   - Type the name of your new branch (format should be: `team-name`) and press Enter.
+
    ![Create a Branch](link-to-create-branch-screenshot)
 
 3. **Add Your Code**
 
+   - To **add new files**, click the "Add file" button, select "Upload files," drag and drop your project files, and commit the changes.
+   - To **edit existing files**, navigate to the file, click the pencil icon to edit, make your changes, and commit the changes.
 
    ![Add Your Code](link-to-add-code-screenshot)
 
-4. **Push to Your Branch**
+4. **Open a Pull Request**
 
-   ![Push to Your Branch](link-to-push-branch-screenshot)
-
-5. **Open a Pull Request**
-
-   - Navigate to your forked repository on GitHub.
-   - Click the `Compare & pull request` button.
-   - Ensure the base repository is set to `codingclubrvce/Volvo_Hack_RVCE` and the base branch is `main`.
-   - Provide a title and description for your pull request, then click `Create pull request`.
-
+   - Go to your forked repository on GitHub.
+   - Click the "Pull requests" tab, then click "New pull request."
+   - Ensure the base repository is `codingclubrvce/Volvo_Hack_RVCE` and the base branch is `main`.
+   - Set the head repository to your fork and the compare branch to your new branch (i.e., `team-name`).
+   - Click "Create pull request."
+   - Provide a title and description for your pull request (project), then click "Create pull request."
    ![Open a Pull Request](link-to-open-pr-screenshot)
