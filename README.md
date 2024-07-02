@@ -37,11 +37,11 @@ To submit your project, follow these steps:
 
    - Select "New Branch" and then type the name of your new branch (format should be: `team-name`) and press Enter.
 
-   ![Create a Branch - 2]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch2.jpeg))
+   ![Create a Branch - 2](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch2.jpeg)
 
    - After creation of new branch, click on the branch name to open it
 
-   ![Create a Branch - 3]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch3.jpeg))
+   ![Create a Branch - 3](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch3.jpeg)
 
 4. **Add Your Code**
 
