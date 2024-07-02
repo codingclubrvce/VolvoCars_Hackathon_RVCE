@@ -24,25 +24,27 @@ To submit your project, follow these steps:
 
    - Navigate to the repository: [Volvo Hackathon @ RVCE](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE.git)
    - Click on the `Fork` button in the upper right corner of the page to create a copy of the repository in your GitHub account.
+   - Select the option of forking only the main branch
 
    ![Fork the Repository](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/fork.jpeg)
 
 2. **Create a Branch**
 
    - Go to your forked repository on GitHub.
-   - Click on the branch dropdown menu (usually says `main` or `master`).
-   - Type the name of your new branch (format should be: `team-name`) and press Enter.
+   - Click on the branch option beside the dropdown menu (usually says `main` or `master`).
+   ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch1.jpeg))
+   - Select "New Branch" and then type the name of your new branch (format should be: `team-name`) and press Enter.
+   ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch2.jpeg))
+   - After creation of new branch, click on the branch name to open it
+   ![Create a Branch]([link-to-create-branch-screenshot](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch3.jpeg))
 
-   ![Create a Branch](link-to-create-branch-screenshot)
-
-3. **Add Your Code**
+4. **Add Your Code**
 
    - To **add new files**, click the "Add file" button, select "Upload files," drag and drop your project files, and commit the changes.
    - To **edit existing files**, navigate to the file, click the pencil icon to edit, make your changes, and commit the changes.
 
-   ![Add Your Code](link-to-add-code-screenshot)
 
-4. **Open a Pull Request**
+5. **Open a Pull Request**
 
    - Go to your forked repository on GitHub.
    - Click the "Pull requests" tab, then click "New pull request."
