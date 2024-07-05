@@ -1,0 +1,8 @@
+Frontend:
+	1) Install NodeJS.
+	2) Open terminal in Front end folder.
+	3) Run the backend.
+	4) Run the Command "npm run dev".
+Backend:
+	1) Install Flask by running "pip install Flask Flask-CORS".
+	2) Run app.py.
