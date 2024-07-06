@@ -5,7 +5,8 @@ Frontend:
 	4) Run the Command "npm run dev".
 Backend:
 	1) Install Flask by running "pip install Flask Flask-CORS".
-	2) Install MySQL connector by running "pip install mysql-connector-python Flask-SQLAlchemy".
+	2) Install MySQL connector by running "pip install flask-mysql-connector passlib".
+".
 	3) Download MYSQL community server.
 	4) Follow the steps given by the configurator.
 	5) When prompted to set password, set it as "password". 
