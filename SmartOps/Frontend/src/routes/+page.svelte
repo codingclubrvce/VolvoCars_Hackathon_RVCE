@@ -1,9 +1,14 @@
 <script>
+  import { base } from '$app/paths';
   import Login from '../lib/Components/login.svelte';
+  import Signup from '$lib/Components/signup.svelte';
   import { onMount } from 'svelte';
   import factory from "../lib/assets/images/login-factory.avif"
   import car from "../lib/assets/images/login-car.jpg"
-
+  
+  let signup = false;
+  let email = "";
+  let password = "";
   /**
 	 * @type {HTMLDivElement}
 	 */
@@ -18,6 +23,26 @@
   let isOpened = false;
   let currentScroll;
   let lastScroll = 3;
+  let container;
+  let message = "";
+
+  const login = async () => {
+        const response = await fetch('http://localhost:5000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+                message = 'User registered successfully!';
+                alert("hoorey!");
+            } else {
+                alert('boo');
+                message = data.error || 'Registration failed';
+            }
+    };
 
   onMount(() => {
     function handleScroll() {
@@ -50,15 +75,16 @@
 
 </script>
 
-
+<main>
   <div class="{lastScroll === 0 ? "scroll-down" : "no-scroll"}">SCROLL DOWN
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
       <path d="M16 3C8.832031 3 3 8.832031 3 16s5.832031 13 13 13 13-5.832031 13-13S23.167969 3 16 3zm0 2c6.085938 0 11 4.914063 11 11 0 6.085938-4.914062 11-11 11-6.085937 0-11-4.914062-11-11C5 9.914063 9.914063 5 16 5zm-1 4v10.28125l-4-4-1.40625 1.4375L16 23.125l6.40625-6.40625L21 15.28125l-4 4V9z" />
     </svg>
   </div>
-  <div class="container"></div>
+  <div class="container">
+  </div>
   <div class="modal {isOpened ? "is-open" : ""}" bind:this={modal}>
-    <div class="modal-container">
+    <div class="modal-container {isOpened ? "blured" : ""}" bind:this={container}>
       <div class="modal-left">
         <h1 class="modal-title">Welcome!</h1>
         <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
@@ -72,9 +98,9 @@
         </div>
         <div class="modal-buttons">
           <a href="something" class="">Forgot your password?</a>
-          <button class="input-button">Login</button>
+          <button class="input-button" on:click={login}>Login</button>
         </div>
-        <p class="sign-up">Don't have an account? <a href="something else">Sign up now</a></p>
+        <p class="sign-up">Don't have an account? <button class="input-button"><a href="{base}/signup">Sign up now</a></button></p>
       </div>
       <div class="modal-right">
         <img src="{car}" alt="">
@@ -87,7 +113,7 @@
     </div>
     <button class="modal-button" on:click={openModal}>Click here to login</button>
   </div>
-
+</main>
 
 <style>
   @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
@@ -101,7 +127,9 @@
 
 .container {
   height: 200vh;
-  background-image: url("login-factory.avif");
+  filter: brightness(70%);
+  z-index: -1;
+  background-image: url("login-factory.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,7 +140,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: rgba(51, 51, 51, 0.5);
   display: flex;
   flex-direction: column;
@@ -122,7 +150,8 @@
 }
 .modal-container {
   display: flex;
-  max-width: 720px;
+  max-width: 550px;
+  height: 550px;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -217,9 +246,7 @@
   font-size: 14px;
   text-align: center;
 }
-.sign-up a {
-  color: #8c7569;
-}
+
 
 .input-button {
   padding: 8px 12px;
