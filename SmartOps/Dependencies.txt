@@ -10,4 +10,9 @@ Backend:
 	4) Follow the steps given by the configurator.
 	5) When prompted to set password, set it as "password". 
 	6) Create a new user with user name "Admin" and password "Admin".
-	3) Run app.py.
+	7) Run Environment variables in windows search.
+	8) Go to Advanced tab.
+	9) Under system variables double click on "path".
+	10) Click new and paste "C:\Program Files\MySQL\MySQL Server 9.0\bin" (Assuming steps were followed by the configurator without variation).
+	11) Run CreateDB.py.
+	12) Run app.py.
