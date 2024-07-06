@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import { onMount } from 'svelte';
   
     /**
@@ -43,6 +43,9 @@
     });
   </script>
 <div>
+  <h1>
+    This is for testing only
+  </h1>
   {#if items.length === 0}
     <p>Loading...</p>
   {:else}
@@ -63,4 +66,32 @@
   </label>
   
   <button on:click={addItem}>Add Item</button>
+</div>
+
+<style>
+  h1{
+    color: blue;
+    align-self: center;
+  }
+</style> -->
+
+<script>
+  let user = "";
+  let password = "";
+  function login(){
+    alert(password);
+  }
+</script>
+
+<div class="login">
+  <h3>Login</h3>
+  <label>
+    User :
+    <input type="text" bind:value={user} />
+  </label>
+  <label>
+    Password :
+    <input type="text" bind:value={password} />
+  </label>
+  <button on:click={login}>Login</button>
 </div>
