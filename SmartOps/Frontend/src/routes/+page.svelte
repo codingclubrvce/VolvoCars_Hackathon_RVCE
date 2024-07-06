@@ -90,11 +90,11 @@
         <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
         <div class="input-block">
           <label for="email" class="input-label">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email">
+          <input type="email" name="email" id="email" placeholder="Email" bind:value={email}>
         </div>
         <div class="input-block">
           <label for="password" class="input-label">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
+          <input type="password" name="password" id="password" placeholder="Password" bind:value={password}>
         </div>
         <div class="modal-buttons">
           <a href="something" class="">Forgot your password?</a>

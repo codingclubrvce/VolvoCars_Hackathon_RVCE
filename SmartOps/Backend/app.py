@@ -41,18 +41,16 @@ def login():
 
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute(
-        "SELECT * FROM users WHERE email = %s AND password = %s",
-        (email, password)
-    )
+    cursor.execute('SELECT * FROM users WHERE email=%s', (email,))
     user = cursor.fetchone()
     cursor.close()
     conn.close()
 
-    if user:
-        return jsonify({"message": "Login successful!", "user": {"username": user[1], "email": user[2]}}), 200
-    else:
-        return jsonify({"message": "Invalid email or password!"}), 401
+    if not user or user[3] != password:
+        return jsonify({'message': user}), 401
+
+    # Successful login
+    return jsonify({'message': 'Login successful', 'user': user}), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
