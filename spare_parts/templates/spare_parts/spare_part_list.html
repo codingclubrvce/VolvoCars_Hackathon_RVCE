@@ -1,0 +1,18 @@
+<!-- templates/spare_parts/spare_part_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Part List</title>
+</head>
+<body>
+    <h2>Spare Part List</h2>
+    <a href="{% url 'spare_part_add' %}">Add Spare Part</a>
+    <ul>
+        {% for spare_part in spare_parts %}
+            <li>{{ spare_part.name }} - <a href="{% url 'spare_part_edit' spare_part.id %}">Edit</a> | <a href="{% url 'spare_part_delete' spare_part.id %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

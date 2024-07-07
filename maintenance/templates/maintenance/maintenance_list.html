@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maintenance List</title>
+</head>
+<body>
+    <h1>Maintenance List</h1>
+    <ul>
+        {% for maintenance in maintenances %}
+        <li>{{ maintenance.asset.name }} - {{ maintenance.scheduled_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
