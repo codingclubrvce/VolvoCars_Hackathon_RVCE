@@ -2,20 +2,27 @@
     import logo from "../../lib/assets/images/whitetextlogo.svg";
     import {base} from "$app/paths";
     import {goto} from "$app/navigation";
-    import { onMount } from 'svelte';
-    /**
-	 * @type {any[]}
-	 */
-    // let rows = [{"id":12, "sub_number":34, "asset_description":"jsdfs", "location2":"somewhere", "current_apc":29439}];
-    let rows = [];
-    onMount(async () => {
-        const response = await fetch('http://localhost:5000/api/inventory');
-        rows = await response.json();
-        alert(JSON.stringify(rows, null, 2));
-    });
-    function add(){
-        
-    }
+    let rows = [
+        { name: "Asiya", Organization: "Something", Address: "Asiya's house", Contact: "9999999999", Price: "6000" },
+    ];
+    function add(){}
+    //     const response = await fetch('http://localhost:5000/api/add_asset', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ email, password })
+    //     });
+    //     const data = await response.json();
+    //     if (response.ok) {
+    //             message = 'User registered successfully!';
+    //             goto(base+"/home");
+    //             alert("hoorey!");
+    //         } else {
+    //             alert('boo');
+    //             message = data.error || 'Registration failed';
+    //         }
+    // }
     function back(){
         goto(base+"/home")
     }
@@ -27,21 +34,21 @@
         <table>
             <thead>
                 <tr>
-                    <th>Asset ID</th>
-                    <th>Sub Number</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Value</th>
+                    <th>Vendor Name</th>
+                    <th>Organization</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
                 {#each rows as row}
                     <tr>
-                        <td>{row.id}</td>
-                        <td>{row.sub_number}</td>
-                        <td>{row.asset_description}</td>
-                        <td>{row.location_2}</td>
-                        <td>{row.current_apc}</td>
+                        <td>{row.name}</td>
+                        <td>{row.Organization}</td>
+                        <td>{row.Address}</td>
+                        <td>{row.Contact}</td>
+                        <td>{row.Price}</td>
                     </tr>
                 {/each}
             </tbody>
@@ -49,11 +56,21 @@
     </div>
     <div class="buttons">
         <div class = "backButton"><button on:click={back}>Back</button></div>
-        <div class = "addButton"><button on:click={add}>Update</button></div>
+        <div class = "addButton"><button on:click={add}>Add Vendor</button></div>
     </div>
 </main>
 
 <style>
+    .buttons{
+        margin-top: 40px;
+        display: flex;
+    }
+    .backButton{
+        margin-left: 140px;
+    }
+    .addButton{
+        margin-left: 1100px;
+    }
     .table-container {
         width: 80%;
         height: 400px; 

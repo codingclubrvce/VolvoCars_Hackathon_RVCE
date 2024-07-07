@@ -2,18 +2,20 @@
     import {base} from "$app/paths";
     import {goto} from "$app/navigation";
     let assetid = "";
-    let units = "";
-    let status = "";
-    let comments = "";
-    let currentapc="";
-    let message = "";
+    let assetname = "";
+    let assetlocation1 = "";
+    let assetlocation2 = "";
+    let value = "";
+    let assetstatus = "";
+    let description = "";
+    let message="";
     async function add(){
-        const response = await fetch('http://localhost:5000/api/update_asset', {
+        const response = await fetch('http://localhost:5000/api/add_asset', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ assetid, units, status, comments, currentapc})
+            body: JSON.stringify({ assetid, assetname, assetlocation1, assetlocation2, value, assetstatus, description})
         });
         const data = await response.json();
         if (response.ok) {
@@ -32,19 +34,18 @@
 <main>
     <div class="leftside">
         <p>Update Inventory</p>
-        <div class = "inputholder"><input type="text" id="assetid" bind:value={assetid} placeholder="Asset ID"/></div>
-        <div class = "inputholder"><input type="number" id="units" bind:value={units} placeholder="Units"/></div>
-        <div class = "inputholder"><input type="number" id="currentapc" bind:value={currentapc} placeholder="APC"/></div>
-        <div class = "inputholder">
-            <select name="Status" id="Status" bind:value={status}>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-            </select>
+        <div class = "inputholder"><input type="number" id="assetid" bind:value={assetid} placeholder="Asset ID"/></div>
+        <div class = "inputholder"><input type="number" id="assetname" bind:value={assetname} placeholder="Sub number"/></div>
+        <div class = "assetlocation">
+            <input type="text" id="assetlocation1" bind:value={assetlocation1} placeholder="Asset Location 1"/>
+            <input type="text" id="assetlocation2" bind:value={assetlocation2} placeholder="Asset Location 2"/>
         </div>
-        <div class = "description"><input type="" id="Comments" bind:value={comments} placeholder="Description"/></div>
+        <div class = "inputholder"><input type="text" id="value" bind:value={value} placeholder="Asset Value"/></div>
+        <div class = "inputholder"><input type="text" id="assetstatus" bind:value={assetstatus} placeholder="Asset status"/></div>
+        <div class = "description"><input type="text" id="description" bind:value={description} placeholder="Description"/></div>
         <div class="buttons">
             <div class = "backButton"><button on:click={back}>Back</button></div>
-            <div class = "addButton"><button on:click={add}>Update</button></div>
+            <div class = "addButton"><button on:click={add}>Add</button></div>
         </div>
     </div>
 </main>
@@ -82,15 +83,20 @@
         color: white;
         font-size: 75px;
     }
-    .leftside input,select{
+    .leftside input{
         height: 40px;
         width: 80%;
         border-radius: 10px;
     }
-    .inputholder{
+    .inputholder,.assetlocation{
         height: 50px;
         margin: 4px;
         padding: 2px;
+    }
+    .assetlocation input{
+        width: 37%;
+        height: 40px;
+        border-radius: 10px;
     }
     .description{
         height: 50px;

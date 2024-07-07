@@ -4,9 +4,9 @@
     import bg from "../../lib/assets/images/homebg.png"
     let navigationLinks = [
         { id: 'ASSET', text: 'ASSET INVENTORY', dropdownItems: [
-            { id: 'updateinvo', text: 'Update Inventory' },
+            { id: 'addinvo', text: 'Add to Inventory' },
             { id: 'viewinvo', text: 'View Inventory' },
-            { id: 'invostatus', text: 'Inventory Status' },
+            { id: 'updateinvo', text: 'Update Inventory' },
             { id: 'assetVendorInfo', text: 'Vendor Info' }
         ] },
         { id: 'SPARE', text: 'SPARE PARTS', dropdownItems: [
