@@ -5,6 +5,7 @@
     let message = '';
 
     function handleSubmit() {
+        alert("This feature needs to be added");
         console.log({ name, email, phone, message });
     }
 </script>
@@ -134,8 +135,8 @@
     </form>
 
     <div class="contact-info">
-        <h2>For questions and technical assistance, Contact:</h2>
-        <p>ASIYA BOMB 💣</p>
+        <h2>For questions and technical assistance,<br> Contact: **********</h2>
+        <p></p>
     </div>
 </div>
 </main>

@@ -5,6 +5,7 @@
     let rows = [
         { name: "Asiya", Organization: "Something", Address: "Asiya's house", Contact: "9999999999", Price: "6000" },
     ];
+    alert("This feature to be updated");
     function add(){}
     //     const response = await fetch('http://localhost:5000/api/add_asset', {
     //         method: 'POST',

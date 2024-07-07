@@ -3,30 +3,30 @@
     import logo from "../../lib/assets/images/logo.jpg";
     import bg from "../../lib/assets/images/homebg.png"
     let navigationLinks = [
-        { id: 'ASSET', text: 'ASSET INVENTORY', dropdownItems: [
+        { id: 'home', text: 'ASSET INVENTORY', dropdownItems: [
             { id: 'addinvo', text: 'Add to Inventory' },
             { id: 'viewinvo', text: 'View Inventory' },
             { id: 'updateinvo', text: 'Update Inventory' },
             { id: 'assetVendorInfo', text: 'Vendor Info' }
         ] },
         { id: 'SPARE', text: 'SPARE PARTS', dropdownItems: [
-            { id: 'sparesupdate', text: 'Update Spares' },
-            { id: 'issue&transfer', text: 'Issue & Transfer' },
-            { id: 'invo', text: 'View Inventory' },
-            { id: 'sparesVendorInfor', text: 'Vendor Info' }
+            { id: 'home', text: 'Update Spares' },
+            { id: 'home', text: 'Issue & Transfer' },
+            { id: 'home', text: 'View Inventory' },
+            { id: 'home', text: 'Vendor Info' }
         ] },
-        { id: 'MAINTAINANCE', text: 'MAINTAINANCE', dropdownItems: [
-            { id: 'mainType', text: 'Maintenance Type' },
-            { id: 'mainPlan', text: 'Maintenance Plan' },
-            { id: 'mainSched', text: 'Maintenance Schedule' },
-            { id: 'mainInstruct', text: 'Maintenance Instructions' }
+        { id: 'home', text: 'MAINTAINANCE', dropdownItems: [
+            { id: 'home', text: 'Maintenance Type' },
+            { id: 'home', text: 'Maintenance Plan' },
+            { id: 'home', text: 'Maintenance Schedule' },
+            { id: 'home', text: 'Maintenance Instructions' }
         ] },
-        { id: 'REPORT', text: 'REPORTS', dropdownItems: [
-            { id: 'assetMaster', text: 'Asset Master' },
-            { id: 'sparesMaster', text: 'Spares Master' },
-            { id: 'assetStatus', text: 'Asset Status' },
-            { id: 'assetIssues', text: 'Asset Issues' },
-            { id: 'sparesIssues', text: 'Spares Complaints' }
+        { id: 'home', text: 'REPORTS', dropdownItems: [
+            { id: 'home', text: 'Asset Master' },
+            { id: 'home', text: 'Spares Master' },
+            { id: 'home', text: 'Asset Status' },
+            { id: 'home', text: 'Asset Issues' },
+            { id: 'home', text: 'Spares Complaints' }
         ] },
         {
             id: 'contact', text: "CONTACT"

@@ -11,10 +11,9 @@
     onMount(async () => {
         const response = await fetch('http://localhost:5000/api/inventory');
         rows = await response.json();
-        alert(JSON.stringify(rows, null, 2));
     });
     function add(){
-        
+        alert("This feature to be added");
     }
     function back(){
         goto(base+"/home")

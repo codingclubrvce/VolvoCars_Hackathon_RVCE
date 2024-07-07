@@ -36,9 +36,8 @@
         if (response.ok) {
                 message = 'User registered successfully!';
                 goto(base+"/home");
-                alert("hoorey!");
             } else {
-                alert('boo');
+                alert('Incorrect creds, Signup if you dont have one!');
                 message = data.error || 'Registration failed';
             }
     };
@@ -86,7 +85,7 @@
     <div class="modal-container {isOpened ? "blured" : ""}" bind:this={container}>
       <div class="modal-left">
         <h1 class="modal-title">Welcome!</h1>
-        <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
+        <p class="modal-desc">A simple app to maintain all.</p>
         <div class="input-block">
           <label for="email" class="input-label">Email</label>
           <input type="email" name="email" id="email" placeholder="Email" bind:value={email}>
@@ -96,7 +95,7 @@
           <input type="password" name="password" id="password" placeholder="Password" bind:value={password}>
         </div>
         <div class="modal-buttons">
-          <a href="something" class="">Forgot your password?</a>
+          <a href="{base}" class="" on:click={alert("This feature yet to be added")}>Forgot your password?</a>
           <button class="input-button" on:click={login}>Login</button>
         </div>
         <p class="sign-up">Don't have an account? <button class="input-button"><a href="{base}/signup">Sign up now</a></button></p>
