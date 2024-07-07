@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Maintenance History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset ID</th>
+                <th>Part ID</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if parts_used %}
+                {% for part_used in parts_used %}
+                    <tr>
+                        <td>{{ part_used.asset_id }}</td>
+                        <td>{{ part_used.part_id }}</td>
+                        <td>{{ part_used.date }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No records available</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <button onclick="location.href='/update_maint'">Update</button>
+        <button onclick="location.href='/add_maint'">Add</button>
+    </div>
+
+{% endblock %}

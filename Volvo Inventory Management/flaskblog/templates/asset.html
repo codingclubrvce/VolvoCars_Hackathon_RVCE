@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Assets Inventory</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset ID</th>
+                <th>Name</th>
+                <th>Sub Number</th>
+                <th>Creation Date</th>
+                <th>Description</th>
+                <th>Cost Center</th>
+                <th>Plant Location</th>
+                <th>Location</th>
+                <th>Current APC</th>
+                <th>Status</th>
+                <th> 24w11 Validation Status</th>
+                <th>Physically Available</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if assets %}
+                {% for asset in assets %}
+                    <tr>
+                        <td>{{ asset.asset_id }}</td>
+                        <td>{{ asset.name }}</td>
+                        <td>{{ asset.sub_number }}</td>
+                        <td>{{ asset.creation_date }}</td>
+                        <td>{{ asset.desc }}</td>
+                        <td>{{ asset.cost_center }}</td>
+                        <td>{{ asset.plant_location }}</td>
+                        <td>{{ asset.location }}</td>
+                        <td>{{ asset.current_apc }}</td>
+                        <td>{{ asset.status }}</td>
+                        <td>{{ asset.validation_24w11 }}</td>
+                        <td>{{ asset.physically_avail }}</td>
+                        <td>{{ asset.comments }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="13">No records available</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <button onclick="location.href='/update_asset'">Update</button>
+        <button onclick="location.href='/add_asset'">Add</button>
+    </div>
+
+{% endblock %}

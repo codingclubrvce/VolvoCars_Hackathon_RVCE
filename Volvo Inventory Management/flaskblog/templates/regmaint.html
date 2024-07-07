@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Regular Maintenance Schedule</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset ID</th>
+                <th>Type</th>
+                <th>Schedule</th>
+                <th>Last Date</th>
+                <th>Instructions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if schedules %}
+                {% for schedule in schedules %}
+                    <tr>
+                        <td>{{ schedule.asset_id }}</td>
+                        <td>{{ schedule.type }}</td>
+                        <td>{{ schedule.schedule }}</td>
+                        <td>{{ schedule.last_date }}</td>
+                        <td>{{ schedule.instructions }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5">No records available</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <button onclick="location.href='/update_regmaint'">Update</button>
+        <button onclick="location.href='/add_regmaint'">Add</button>
+    </div>
+
+{% endblock %}

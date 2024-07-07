@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Add a Regular Maintenance Schedule</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="asset_id">Asset ID</label>
+            <input type="number" id="asset_id" name="asset_id" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" id="type" name="type" required>
+        </div>
+        <div class="form-group">
+            <label for="schedule">Schedule</label>
+            <input type="text" id="schedule" name="schedule" required>
+        </div>
+        <div class="form-group">
+            <label for="last_date">Last Date</label>
+            <input type="date" id="last_date" name="last_date" required>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <input type="text" id="instructions" name="instructions" required>
+        </div>
+        <div class="button-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}
