@@ -1,7 +1,7 @@
 <script>
     import {base} from '$app/paths';
     import logo from "../../lib/assets/images/logo.jpg";
-    import bg from "../../lib/assets/images/homebg.jpg"
+    import bg from "../../lib/assets/images/homebg.png"
     let navigationLinks = [
         { id: 'ASSET', text: 'ASSET INVENTORY', dropdownItems: [
             { id: 'updateinvo', text: 'Update Inventory' },
@@ -29,7 +29,7 @@
             { id: 'sparesIssues', text: 'Spares Complaints' }
         ] },
         {
-            id: 'CONTACT', text: "CONTACT"
+            id: 'contact', text: "CONTACT"
         }
     ];
 </script>
@@ -43,36 +43,21 @@
                     <a href={'#' + link.id}>{link.text}</a>
                     <div class="dropdown-content">
                         {#each link.dropdownItems as item}
-                            <a href={'#' + item.id}>{item.text}</a>
+                            <a href={`${base}/${item.id}`}>{item.text}</a>
                         {/each}
                     </div>
                 </div>
             {:else}
-                <a href={'#' + link.id}>{link.text}</a>
+            <a href={`${base}/${link.id}`}>{link.text}</a>
             {/if}
         {/each}
     </nav>
 </header>
 <div class="background-image">
-    <div class="slogan">
-        REDEFINING PERFECTION
-    </div>
 </div>
 </main>
 
 <style>
-    .slogan{
-        position: absolute;
-        bottom: 150px; /* Adjust bottom spacing */
-        left: 50%;
-        font-size: 40px;
-        transform: translateX(-50%);
-        color: white; /* Text color */
-        padding: 10px; /* Adjust padding as needed */
-        text-align: center; /* Center text horizontally */
-        width: calc(100% - 20px); /* Adjust width to fit content */
-        
-    }
     .bottomcontent{
         align-self: flex-end;
     }

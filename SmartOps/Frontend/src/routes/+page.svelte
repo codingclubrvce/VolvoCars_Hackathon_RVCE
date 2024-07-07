@@ -1,9 +1,6 @@
 <script>
   import { base } from '$app/paths';
-  import Login from '../lib/Components/login.svelte';
-  import Signup from '$lib/Components/signup.svelte';
   import { onMount } from 'svelte';
-  import factory from "../lib/assets/images/login-factory.avif"
   import car from "../lib/assets/images/login-car.jpg"
 	import { goto } from '$app/navigation';
   

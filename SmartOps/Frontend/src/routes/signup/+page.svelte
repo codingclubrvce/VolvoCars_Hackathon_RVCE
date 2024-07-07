@@ -29,6 +29,7 @@
             }
         } else {
             message = "Passwords do not match";
+            alert(message);
         }
     };
 </script>
