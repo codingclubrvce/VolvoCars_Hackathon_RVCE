@@ -24,6 +24,10 @@
   let container;
   let message = "";
 
+  function nothing(){
+    alert("This feature needs to be added");
+  }
+
   const login = async () => {
         const response = await fetch('http://localhost:5000/api/login', {
             method: 'POST',
@@ -95,7 +99,7 @@
           <input type="password" name="password" id="password" placeholder="Password" bind:value={password}>
         </div>
         <div class="modal-buttons">
-          <a href="{base}" class="" on:click={alert("This feature yet to be added")}>Forgot your password?</a>
+          <a href="{base}" class="" on:click={nothing}>Forgot your password?</a>
           <button class="input-button" on:click={login}>Login</button>
         </div>
         <p class="sign-up">Don't have an account? <button class="input-button"><a href="{base}/signup">Sign up now</a></button></p>

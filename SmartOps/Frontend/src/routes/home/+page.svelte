@@ -9,7 +9,7 @@
             { id: 'updateinvo', text: 'Update Inventory' },
             { id: 'assetVendorInfo', text: 'Vendor Info' }
         ] },
-        { id: 'SPARE', text: 'SPARE PARTS', dropdownItems: [
+        { id: 'home', text: 'SPARE PARTS', dropdownItems: [
             { id: 'home', text: 'Update Spares' },
             { id: 'home', text: 'Issue & Transfer' },
             { id: 'home', text: 'View Inventory' },
