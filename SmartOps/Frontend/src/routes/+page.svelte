@@ -5,6 +5,7 @@
   import { onMount } from 'svelte';
   import factory from "../lib/assets/images/login-factory.avif"
   import car from "../lib/assets/images/login-car.jpg"
+	import { goto } from '$app/navigation';
   
   let signup = false;
   let email = "";
@@ -37,6 +38,7 @@
         const data = await response.json();
         if (response.ok) {
                 message = 'User registered successfully!';
+                goto(base+"/home");
                 alert("hoorey!");
             } else {
                 alert('boo');
@@ -47,7 +49,7 @@
   onMount(() => {
     function handleScroll() {
       currentScroll = window.scrollY;
-      if (currentScroll>lastScroll && window.scrollY > window.innerHeight / 3 && !isOpened) {
+      if (currentScroll>lastScroll && !isOpened) {
         isOpened = true;
         openModal();
       }
@@ -116,7 +118,6 @@
 </main>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 * {
   box-sizing: border-box;
 }
@@ -126,7 +127,7 @@
 }
 
 .container {
-  height: 200vh;
+  height: 110vh;
   filter: brightness(70%);
   z-index: -1;
   background-image: url("login-factory.jpg");

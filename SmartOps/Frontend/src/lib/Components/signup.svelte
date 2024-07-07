@@ -39,7 +39,6 @@
         position: fixed;
         background: rgb(0,0,0,0.8);
     }
-    @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 * {
   box-sizing: border-box;
 }
