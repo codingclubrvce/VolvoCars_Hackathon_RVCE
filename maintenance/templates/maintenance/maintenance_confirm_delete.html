@@ -1,0 +1,17 @@
+<!-- templates/maintenance/maintenance_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Maintenance</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete the maintenance record for {{ maintenance.asset.name }} on {{ maintenance.date }}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'maintenance_list' %}">Cancel</a>
+</body>
+</html>

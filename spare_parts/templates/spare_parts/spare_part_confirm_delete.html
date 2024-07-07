@@ -1,0 +1,17 @@
+<!-- templates/spare_parts/spare_part_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Spare Part</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete {{ spare_part.name }}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'spare_part_list' %}">Cancel</a>
+</body>
+</html>
