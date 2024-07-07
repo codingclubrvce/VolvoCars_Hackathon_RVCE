@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Maintenance Update</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="asset_id">Asset ID</label>
+            <input type="number" id="asset_id" name="asset_id" required>
+        </div>
+        <div class="form-group">
+            <label for="part_id">Part ID</label>
+            <input type="number" id="part_id" name="part_id" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="button-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Update Assets Inventory</h1>
+    <form method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Asset ID</th>
+                    <th>Name</th>
+                    <th>Sub Number</th>
+                    <th>Creation Date</th>
+                    <th>Description</th>
+                    <th>Cost Center</th>
+                    <th>Plant Location</th>
+                    <th>Location</th>
+                    <th>Current APC</th>
+                    <th>Status</th>
+                    <th>Validation 24w11</th>
+                    <th>Physically Avail</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if assets %}
+                    {% for asset in assets %}
+                        <tr>
+                            <td><input type="hidden" name="asset_id" value="{{ asset.asset_id }}"></td>
+                            <td><input type="text" name="name" value="{{ asset.name }}"></td>
+                            <td><input type="number" name="sub_number" value="{{ asset.sub_number }}"></td>
+                            <td><input type="date" name="creation_date" value="{{ asset.creation_date }}"></td>
+                            <td><input type="text" name="desc" value="{{ asset.desc }}"></td>
+                            <td><input type="text" name="cost_center" value="{{ asset.cost_center }}"></td>
+                            <td><input type="text" name="plant_location" value="{{ asset.plant_location }}"></td>
+                            <td><input type="text" name="location" value="{{ asset.location }}"></td>
+                            <td><input type="number" name="current_apc" value="{{ asset.current_apc }}"></td>
+                            <td><input type="text" name="status" value="{{ asset.status }}"></td>
+                            <td>
+                                <select name="validation_24w11">
+                                    <option value="Yes" {% if asset.validation_24w11 == 'Yes' %} selected {% endif %}>Yes</option>
+                                    <option value="No" {% if asset.validation_24w11 == 'No' %} selected {% endif %}>No</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="physically_avail">
+                                    <option value="Yes" {% if asset.physically_avail == 'Yes' %} selected {% endif %}>Yes</option>
+                                    <option value="No" {% if asset.physically_avail == 'No' %} selected {% endif %}>No</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="comments" value="{{ asset.comments }}"></td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="13">No records to update</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button type="submit">Update Asset Inventory</button>
+        </div>
+    </form>
+
+{% endblock %}

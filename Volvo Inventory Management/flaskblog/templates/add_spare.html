@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Add a Spare Part</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="asset_id">Asset ID</label>
+            <input type="number" id="asset_id" name="asset_id" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="number">Number</label>
+            <input type="number" id="number" name="number" required>
+        </div>
+        <div class="form-group">
+            <label for="vendor">Vendor</label>
+            <input type="text" id="vendor" name="vendor" required>
+        </div>
+        <div class="form-group">
+            <label for="lead_time">Lead Time</label>
+            <input type="text" id="lead_time" name="lead_time" required>
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost</label>
+            <input type="number" id="cost" name="cost" required>
+        </div>
+        <div class="button-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

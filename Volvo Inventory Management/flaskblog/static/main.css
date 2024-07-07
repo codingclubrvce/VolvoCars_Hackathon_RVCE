@@ -1,0 +1,171 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set full height for HTML and body */
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #c7c7c7;
+}
+
+/* Home page */
+.logo-home img {
+    max-height: 60vh; /* 60% of the viewport width */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    padding: 10px;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.options-home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    gap: 20px; /* Gap between grid items */
+    justify-items: center; /* Center items horizontally within the grid */
+    align-items: center; /* Center items vertically within the grid */
+    margin-top: 50px; /* Optional margin for spacing */
+}
+
+.option-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif; /* Custom font family */
+    font-size: 18px; /* Custom font size */
+    color: #fff; /* Text color */
+    background-color: #3498db; /* Background color */
+    padding: 20px 40px; /* Padding around each button */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* Remove border */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.option-button:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh
+}
+
+/* Vertical Dashboard */
+
+.vertical-dashboard {
+    border-right: 1px solid #ccc; /* Border on the right side */
+    width: 200px; /* Adjust width as needed */
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vertical-dashboard ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+}
+
+.vertical-dashboard li {
+    margin-bottom: 10px; /* Spacing between each option */
+}
+
+.vertical-dashboard ul li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.vertical-dashboard a:hover {
+    background-color: #d0d0d0; /* Background color on hover */
+}
+
+.main-content {
+    margin-left: 220px; /* Adjust according to vertical-dashboard width */
+    padding: 20px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word; /* Wrap long sentences */
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+/* Forms */
+form {
+    max-width: 800px;
+    margin: 10px;
+}
+
+form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Add space between lines */
+}
+
+form .form-group label {
+    width: 200px; /* Adjust width as needed */
+    margin-right: 20px;
+}
+
+form .form-group input,
+form .form-group select {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form .form-group select {
+    width: auto;
+}
+
+
+@media (max-width: 800px) {
+    .vertical-dashboard {
+        width: 100px;
+    }
+
+    .main-content {
+        margin-left: 120px;
+    }
+}

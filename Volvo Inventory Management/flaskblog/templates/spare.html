@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Spare Parts Inventory</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Part ID</th>
+                <th>Asset ID</th>
+                <th>Location</th>
+                <th>Number</th>
+                <th>Vendor</th>
+                <th>Lead Time</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if parts %}
+                {% for part in parts %}
+                    <tr>
+                        <td>{{ part.part_id }}</td>
+                        <td>{{ part.asset_id }}</td>
+                        <td>{{ part.location }}</td>
+                        <td>{{ part.number }}</td>
+                        <td>{{ part.vendor }}</td>
+                        <td>{{ part.lead_time }}</td>
+                        <td>{{ part.cost }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="7">No records available</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <button onclick="location.href='/update_spare'">Update</button>
+        <button onclick="location.href='/add_spare'">Add</button>
+    </div>
+
+{% endblock %}

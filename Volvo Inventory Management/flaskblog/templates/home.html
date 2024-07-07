@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+
+    {% if title %}
+    <title>Volvo - {{title}}</title>
+    {% else %}
+    <title>Volvo Inventory Management</title>
+    {% endif %}
+</head>
+<body>
+    <div class="logo-home">
+        <img src="{{ url_for('static', filename='volvo-logo-black.jpg') }}" alt="VOLVO">
+    </div>
+    <div class="options-home">
+        <a class="option-button" href="{{ url_for('asset')}}">Assets Inventory</a>
+        <a class="option-button" href="{{ url_for('spare')}}">Spare Parts Inventory</a>
+        <a class="option-button" href="{{ url_for('regmaint')}}">Regular Maintenance Schedule</a>
+        <a class="option-button" href="{{ url_for('maint')}}">Maintenance History</a>
+    </div>
+</body>
+</html>

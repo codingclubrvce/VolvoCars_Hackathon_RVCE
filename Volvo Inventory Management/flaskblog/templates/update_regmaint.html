@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Update Maintenance Schedule</h1>
+    <form method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Asset ID</th>
+                    <th>Type</th>
+                    <th>Schedule</th>
+                    <th>Last Date</th>
+                    <th>Instructions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if schedules %}
+                    {% for schedule in schedules %}
+                        <tr>
+                            <td><input type="hidden" name="asset_id" value="{{ schedule.asset_id }}"></td>
+                            <td><input type="hidden" name="type" value="{{ schedule.type }}"></td>
+                            <td><input type="text" name="schedule" value="{{ schedule.schedule }}"></td>
+                            <td><input type="date" name="last_date" value="{{ schedule.last_date }}"></td>
+                            <td><input type="text" name="instructions" value="{{ schedule.instructions }}"></td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5">No records to update</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <div  class="button-container">
+            <button type="submit">Update Maintenance Schedule</button>
+        </div>
+    </form>
+
+{% endblock %}
