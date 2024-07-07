@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    tools:context=".Home_Page"
+    tools:ignore="Overdraw">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginLeft="15dp"
+                    android:text="Hello,"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:layout_marginLeft="15dp"
+
+                    android:letterSpacing="0.1"
+                    android:text="Welcome.."
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="1dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:padding="1dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:text="Asset\nManagement"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon4" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/poppins_semi_bold"
+
+                                android:gravity="center"
+                                android:text="Spare\nManagement"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:padding="1dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon6" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/poppins_semi_bold"
+
+                                android:gravity="center"
+                                android:text="Maintenance"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon7" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:gravity="center"
+                                android:text="Analytics"
+                                android:fontFamily="@font/poppins_semi_bold"
+
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:padding="1dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon8" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:gravity="center"
+                                android:text="Customer\nSupport"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_semi_bold"
+
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/hp_card6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/grey"
+                        android:clickable="true"
+                        android:elevation="50dp"
+                        android:focusable="true"
+                        android:foreground="?attr/actionBarItemBackground"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginEnd="5dp"> <!-- Add margin here -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/icon1" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:gravity="center"
+                                android:text="Settings"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_semi_bold"
+
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearLayout4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="18dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="2dp"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    app:cardCornerRadius="5dp">-->
+
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:orientation="horizontal">-->
+
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imageView8"-->
+<!--                            android:layout_width="45dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:contentDescription="@string/material_motion_easing_accelerated"-->
+<!--                            android:src="@drawable/volvo_logo_b"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintHorizontal_bias="0.002"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            tools:ignore="TooDeepLayout" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView8"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="logout"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="22sp"-->
+<!--                            android:textStyle="normal"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintHorizontal_bias="0.0"-->
+<!--                            app:layout_constraintStart_toEndOf="@+id/imageView8"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintVertical_bias="0.523" />-->
+
+<!--                        <com.google.android.material.button.MaterialButton-->
+<!--                            android:id="@+id/Log_out_btn"-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:background="@color/white"-->
+<!--                            android:backgroundTint="@color/white"-->
+<!--                            android:gravity="center"-->
+<!--                            app:icon="@drawable/vector_logout"-->
+<!--                            app:iconGravity="start"-->
+<!--                            app:iconTint="@color/white"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintHorizontal_bias="0.963"-->
+<!--                            app:layout_constraintStart_toEndOf="@+id/textView8"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintVertical_bias="0.0">-->
+
+<!--                        </com.google.android.material.button.MaterialButton>-->
+
+
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--                </androidx.cardview.widget.CardView>-->
+
+
+<!--            </LinearLayout>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
