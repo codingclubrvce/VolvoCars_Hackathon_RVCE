@@ -53,6 +53,17 @@
 </main>
 
 <style>
+    button{
+        padding: 8px 12px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: #8c7569;
+  font-family: "Nunito", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+    }
     .table-container {
         width: 80%;
         height: 400px; 

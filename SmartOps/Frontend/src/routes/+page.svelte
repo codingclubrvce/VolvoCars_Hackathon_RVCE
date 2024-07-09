@@ -27,6 +27,10 @@
   function nothing(){
     alert("This feature needs to be added");
   }
+  
+  function goToSignUp(){
+    goto(base+"signup")
+  }
 
   const login = async () => {
         const response = await fetch('http://localhost:5000/api/login', {
@@ -102,7 +106,7 @@
           <a href="{base}" class="" on:click={nothing}>Forgot your password?</a>
           <button class="input-button" on:click={login}>Login</button>
         </div>
-        <p class="sign-up">Don't have an account? <button class="input-button"><a href="{base}/signup">Sign up now</a></button></p>
+        <p class="sign-up">Don't have an account? <button class="input-button" on:click={goToSignUp}>Sign up now</button></p>
       </div>
       <div class="modal-right">
         <img src="{car}" alt="">

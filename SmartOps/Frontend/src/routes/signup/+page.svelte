@@ -1,22 +1,49 @@
 <script>
+	import { text } from "@sveltejs/kit";
+
     /**
 	 * @type {string | any[] }
 	 */
     let items = [];
+    let OTP="";
     let username = "";
     let password = "";
     let repeatpassword = "";
     let email = "";
     let message = "";
 
-    const signup = async () => {
+    const sendOTP = async () => {
+        if (password === repeatpassword) {
+            const response = await fetch('http://localhost:5000/api/otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email})
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                message = 'OTP Generated successfully!';
+                alert("Check you mail!");
+            } else {
+                message = data.error || 'OTP Generation Failed, Check email';
+            }
+        } else {
+            message = "Passwords do not match";
+            alert(message);
+        }
+    };
+
+    const signUp = async () => {
         if (password === repeatpassword) {
             const response = await fetch('http://localhost:5000/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, email, password })
+                body: JSON.stringify({ username, email, password, OTP })
             });
 
             const data = await response.json();
@@ -39,12 +66,15 @@
         <div class="background"></div>
         <div class="box">
             <p>Please enter the credentials.</p>
-            <form on:submit|preventDefault={signup}>
+            <form on:submit|preventDefault={signUp}>
                 <input type="text" placeholder="Username" bind:value={username} required />
                 <input type="email" placeholder="Email" bind:value={email} required />
                 <input type="password" placeholder="Password" bind:value={password} required />
                 <input type="password" placeholder="Repeat Password" bind:value={repeatpassword} required />
-                <button type="submit">SignUp</button>
+                <input type="text" placeholder="OTP" bind:value={OTP} required>
+                <br>
+                <button type="button">Send OTP</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
