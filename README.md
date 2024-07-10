@@ -75,8 +75,6 @@ This project is a Flutter-based application for asset management, integrated wit
 
 ![WhatsApp Image 2024-07-10 at 23 05 13_012fc9b8](https://github.com/Malfito/VolvoCars_Hackathon_RVCE/assets/132772771/d1b5c102-1ef2-4d0b-9cf0-cb0beca159a6)
 
-![WhatsApp Image 2024-07-10 at 23 36 12_671bbfe2](https://github.com/Malfito/VolvoCars_Hackathon_RVCE/assets/132772771/bc2d825d-d295-4666-9922-9cb2e6b186a9)
-
 
 
 ## Additional Information
