@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1079801214142",
+    "firebase_url": "https://volvo-358a4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "volvo-358a4",
+    "storage_bucket": "volvo-358a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079801214142:android:9f938be72132eb821b1aef",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW3YEZ5WP0omtUMfDdK3XSoON_EZQqMpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
