@@ -73,20 +73,16 @@ This project is a Flutter-based application for asset management, integrated wit
 
 ## System Design Architecture
 
-(Include the system design architecture here)
+![WhatsApp Image 2024-07-10 at 23 05 13_012fc9b8](https://github.com/Malfito/VolvoCars_Hackathon_RVCE/assets/132772771/d1b5c102-1ef2-4d0b-9cf0-cb0beca159a6)
+
+![WhatsApp Image 2024-07-10 at 23 36 12_671bbfe2](https://github.com/Malfito/VolvoCars_Hackathon_RVCE/assets/132772771/bc2d825d-d295-4666-9922-9cb2e6b186a9)
+
+
 
 ## Additional Information
 
-- *Backend*
-    - Spring Boot version: x.x.x
-    - Hibernate version: x.x.x
+![WhatsApp Image 2024-07-10 at 23 35 48_d6b5787b](https://github.com/Malfito/VolvoCars_Hackathon_RVCE/assets/132772771/22821bf0-5535-43c5-804a-d5f726f9b6d5)
 
-- *Database*
-    - MySQL version: x.x.x
-
-- *Flutter*
-    - Flutter version: x.x.x
-    - Dart version: x.x.x
 
 Feel free to contact us for any queries or issues related to the project setup and execution.
 
