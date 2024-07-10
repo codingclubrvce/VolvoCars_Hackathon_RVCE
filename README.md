@@ -1,68 +1,95 @@
-# VolvoCars_Hackathon_RVCE
-This repository is for submissions of  V Hack 2024 being organised by Volvo Cars and RVCE Coding Club.
+# Volvo Asset Manager
 
-We are excited to see your innovative solutions. Please follow the instructions below to submit your project.
+## Project Overview
 
-## Table of Contents
-- [Code of Conduct](#code-of-conduct)
-- [Rules](#rules)
-- [Submission Instructions](#submission-instructions)
-- [Screenshots](#screenshots)
-- [License](#license)
+This project is a Flutter-based application for asset management, integrated with a backend built using Java Spring Boot with Hibernate. The backend provides various API services required by the Flutter app to function. The backend and database files are included in a zipped folder attached to this project.
 
-## Code of Conduct
-Please make sure to read and adhere to our [Code of Conduct](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE/blob/main/CODE_OF_CONDUCT.md).
+## Prerequisites
 
-## Rules
-Please review the [Hackathon Rules](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE/blob/main/RULES.md) before submitting your project.
+### Flutter Application
 
-## Submission Instructions
+- Android Studio (preferred IDE)
+- Flutter SDK
+- Dart SDK
 
-To submit your project, follow these steps:
+### Backend
 
-1. **Fork the Repository**
+- Eclipse IDE
+- Java Development Kit (JDK)
+- MySQL Workbench
 
-   - Navigate to the repository: [Volvo Hackathon @ RVCE](https://github.com/codingclubrvce/VolvoCars_Hackathon_RVCE.git)
-   - Click on the `Fork` button in the upper right corner of the page to create a copy of the repository in your GitHub account.
-   - Select the option of forking only the main branch
+## Setting Up the Backend
 
-   ![Fork the Repository](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/fork.jpeg)
+1. *Unzip the Backend Folder*
+    - Unzip the provided backend folder which includes the Java Spring Boot project and the MySQL database file.
 
-2. **Create a Branch**
+2. *Import the Spring Boot Project into Eclipse IDE*
+    - Open Eclipse IDE.
+    - Go to File > Import > Maven > Existing Maven Projects.
+    - Select the unzipped backend project folder and click Finish.
 
-   - Go to your forked repository on GitHub.
-   - Click on the branch option beside the dropdown menu (usually says `main` or `master`).
+3. *Set Up the Database*
+    - Open MySQL Workbench.
+    - Create a new database schema.
+    - Import the provided SQL file into this schema.
 
-   ![Create a Branch - 1](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch1.jpeg)
+4. *Configure Database Connection*
+    - Open the application.properties file in the Spring Boot project.
+    - Configure the database connection properties (username, password, database URL, etc.).
+      properties
+      spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_DATABASE_NAME
+      spring.datasource.username=root
+      spring.datasource.password=YOUR_PASSWORD
 
-   - Select "New Branch" and then type the name of your new branch (format should be: `team-name`) and press Enter.
 
-   ![Create a Branch - 2](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch2.jpeg)
+5. *Run the Spring Boot Application*
+    - Right-click the project in Eclipse IDE.
+    - Select Run As > Spring Boot App.
 
-   - After creation of new branch, click on the branch name to open it
+## Setting Up the Flutter Application
 
-   ![Create a Branch - 3](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/branch3.jpeg)
+1. *Clone the Flutter Project*
+    - Clone or download the Flutter project repository to your local machine.
 
-4. **Add Your Code**
+2. *Open the Project in Android Studio*
+    - Open Android Studio.
+    - Select Open an Existing Project.
+    - Navigate to the cloned Flutter project folder and open it.
 
-   - To **add new files**, click the "Add file" button, select "Upload files," drag and drop your project files, and commit the changes.
-   - To **edit existing files**, navigate to the file, click the pencil icon to edit, make your changes, and commit the changes.
-   - Commit the changes directly to your branch
+3. *Install Dependencies*
+    - Open the terminal in Android Studio.
+    - Run the following command to install the necessary dependencies:
+      sh
+      flutter pub get
 
-5. **Open a Pull Request**
 
-   - Go to your forked repository on GitHub.
-   - Click the "Pull requests" tab, then click "New pull request."
-   - Ensure the base repository is `codingclubrvce/VolvoCars_Hackathon_RVCE` and the base branch is `main`.
-   - Set the head repository to your forked repo and the compare branch to your new branch (i.e., `team-name`).
+4. *Configure API Endpoints*
+    - Open the Flutter project and navigate to the configuration file where the API endpoints are defined.
+    - Update the base URL to point to the backend server running the Spring Boot application.
 
-   ![Open a Pull Request](https://github.com/Quintus-HGV/VolvoCars_Hackathon_RVCE/blob/main/screenshots/pr1.jpeg)
+5. *Run the Flutter Application*
+    - Connect your Android device or start an emulator.
+    - Click the Run button in Android Studio.
 
-   - Click "Create pull request."
-   - In title, enter your team name and title of your project
-   - In Description, enter the following:
-     <ul>Project Description</ul>
-     <ul>Tech Stacks used</ul>
-     <ul>Additional info/comments (if any)</ul>
+## System Design Architecture
 
-   - Finally, click on Create Pull Request.
+(Include the system design architecture here)
+
+## Additional Information
+
+- *Backend*
+    - Spring Boot version: x.x.x
+    - Hibernate version: x.x.x
+
+- *Database*
+    - MySQL version: x.x.x
+
+- *Flutter*
+    - Flutter version: x.x.x
+    - Dart version: x.x.x
+
+Feel free to contact us for any queries or issues related to the project setup and execution.
+
+---
+
+This README file provides the necessary steps to set up and run the Flutter application along with the backend services. Ensure all dependencies and configurations are correctly set up to avoid any runtime issues.
