@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/updateinvo/+page.svelte";
+export { default as component } from "../../../../src/routes/home/maintainance/schedule/+page.svelte";

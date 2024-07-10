@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        height: calc(100vh - 10em);
+        height: calc(100vh);
         background-size: cover;
         background-color: #050D19;
     }

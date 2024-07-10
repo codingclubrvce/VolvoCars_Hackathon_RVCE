@@ -1,19 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from flask_mail import Mail, Message
 import mysql.connector
 import datetime
 import bcrypt
 import random
-import os
-
-import os
 import smtplib
 from email.message import EmailMessage
 from email.utils import formataddr
-from pathlib import Path
-
-from dotenv import load_dotenv
 
 sender_email = 'hackvolvo@gmail.com'
 password_email = 'sbwx xmnu uefj vhvu'
@@ -186,7 +179,7 @@ def add_asset():
 @app.route('/api/add_subasset', methods=['POST'])
 def add_subasset():
     data = request.json
-    asset_id = int(data.get('assetId'))
+    asset_id = data.get('assetId')
     sub_asset_id = (data.get('subassetId'))
     sub_asset_name = data.get('subassetName')
     status1 = "active"
@@ -214,6 +207,14 @@ def add_subasset():
             "INSERT INTO sub_assets (sub_asset_id, asset_id, sub_asset_creation_date, status_1, status_2, cost, location, maintainance_date, vendor, issue) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
             (sub_asset_id, asset_id, subasset_creation_date, status1, status2, cost, location, maitainanceData, vendor, issue)
         )
+        # cursor.execute(
+        #     'SELECT * FROM assets WHERE asset_id=%s', (asset_id,)
+        # )
+        # number = cursor.fetchall()
+        # number = number.active_units
+        # cursor.execute(
+        #     "insert into assets (active_units) values (%s,)", (int(number)+1)
+        # )
         conn.commit()
         cursor.close()
         conn.close()
@@ -296,7 +297,7 @@ def delete_asset(asset_number):
         cursor.close()
         conn.close()
 
-@app.route('/api/inventory', methods=['GET'])
+@app.route('/api/assets', methods=['GET'])
 def show_inventory():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -314,6 +315,24 @@ def show_inventory():
     finally:
         cursor.close()
         conn.close()
+
+@app.route('/api/assets/<int:asset_id>', methods=['GET'])
+def get_asset_details(asset_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM assets WHERE asset_id=%s', (asset_id,))
+    asset = cursor.fetchall()
+    cursor.execute('SELECT * FROM sub_assets WHERE asset_id=%s', (asset_id,))
+    SubAsset = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    if asset is None:
+        return jsonify({'error': 'Asset not found'}), 404
+    
+    return jsonify({
+        'asset': {'id': asset.asset_id, 'name': asset.asset_name, 'description': asset.asset_description, 'active_units':asset.active_units},
+        'sub_assets': [{'id': sub_asset.id, 'name': sub_asset.name, 'description': sub_asset.description} for sub_asset in SubAsset]
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)

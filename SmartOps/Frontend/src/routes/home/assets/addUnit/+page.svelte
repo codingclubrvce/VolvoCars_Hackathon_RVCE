@@ -24,7 +24,6 @@
         if (response.ok) {
                 message = 'User registered successfully!';
                 goto(base+"/home");
-                alert("hoorey!");
             } else {
                 message = data.error || 'Registration failed';
                 alert(message);

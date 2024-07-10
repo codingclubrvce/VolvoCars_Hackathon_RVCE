@@ -19,9 +19,7 @@
         if (response.ok) {
                 message = 'User registered successfully!';
                 goto(base+"/home");
-                alert("hoorey!");
             } else {
-                alert('boo');
                 message = data.error || 'Registration failed';
             }
     }

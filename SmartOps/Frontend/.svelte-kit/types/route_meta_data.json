@@ -6,6 +6,14 @@
 	"/home/assets/assetVendorInfo": [],
 	"/home/assets/viewInvo": [],
 	"/home/contact": [],
+	"/home/maintainance": [],
+	"/home/maintainance/schedule": [],
+	"/home/reports/assetMaster": [],
+	"/home/reports/assetStatus": [],
+	"/home/reports/sparesMaster": [],
+	"/home/spares/addSpares": [],
+	"/home/spares/spareVendorInfo": [],
+	"/home/spares/sparesInvo": [],
 	"/signup": [],
 	"/updateinvo": []
 }

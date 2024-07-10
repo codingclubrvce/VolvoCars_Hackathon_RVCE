@@ -50,7 +50,6 @@
             
             if (response.ok) {
                 message = 'User registered successfully!';
-                alert("hoorey!");
             } else {
                 message = data.error || 'Registration failed';
                 alert("Wrong OTP");

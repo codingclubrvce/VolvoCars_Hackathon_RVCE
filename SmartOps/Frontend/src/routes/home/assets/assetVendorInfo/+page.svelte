@@ -7,23 +7,6 @@
     ];
     alert("This feature to be updated");
     function add(){}
-    //     const response = await fetch('http://localhost:5000/api/add_asset', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ email, password })
-    //     });
-    //     const data = await response.json();
-    //     if (response.ok) {
-    //             message = 'User registered successfully!';
-    //             goto(base+"/home");
-    //             alert("hoorey!");
-    //         } else {
-    //             alert('boo');
-    //             message = data.error || 'Registration failed';
-    //         }
-    // }
     function back(){
         goto(base+"/home")
     }

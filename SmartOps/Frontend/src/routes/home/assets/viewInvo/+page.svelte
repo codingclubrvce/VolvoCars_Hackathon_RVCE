@@ -3,73 +3,116 @@
     import {base} from "$app/paths";
     import {goto} from "$app/navigation";
     import { onMount } from 'svelte';
+
     /**
 	 * @type {any[]}
 	 */
-    let rows = [];
-    onMount(async () => {
-        const response = await fetch('http://localhost:5000/api/inventory');
-        rows = await response.json();
+    let assets = [];
+    /**
+	 * @type {{ id: any; name: any; description: any; } | null}
+	 */
+    let selectedAsset = null;
+    /**
+	 * @type {any[]}
+	 */
+    let subAssets = [];
+
+    async function fetchAssets() {
+        const response = await fetch('http://localhost:5000/api/assets');
+        assets = await response.json();
+    }
+
+    /**
+	 * @param {any} assetId
+	 */
+    async function fetchAssetDetails(assetId) {
+        const response = await fetch(`http://localhost:5000/api/assets/${assetId}`);
+        const data = await response.json();
+        selectedAsset = data.asset;
+        subAssets = data.sub_assets;
+    }
+
+    onMount(() => {
+        fetchAssets();
     });
-    function add(){
-        alert("This feature to be added");
-    }
-    function back(){
-        goto(base+"/home")
-    }
 </script>
 
 <main>
-    <img src={logo} alt="logo"/>
-    <div class="table-container">
+    <h1>Inventory</h1>
+
+    <h2>Assets</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#each assets as asset}
+                <tr on:click={() => fetchAssetDetails(asset.asset_id)}>
+                    <td>{asset.asset_id}</td>
+                    <td>{asset.asset_name}</td>
+                    <td>{asset.asset_description}</td>
+                </tr>
+            {/each}
+        </tbody>
+    </table>
+
+    {#if selectedAsset}
+        <div class="asset-details">
+            <h2>Selected Asset</h2>
+            <p><strong>ID:</strong> {selectedAsset.id}</p>
+            <p><strong>Name:</strong> {selectedAsset.name}</p>
+            <p><strong>Description:</strong> {selectedAsset.description}</p>
+        </div>
+
+        <h2>Sub-Assets</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Asset ID</th>
-                    <th>Sub Number</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Description</th>
-                    <th>Location</th>
-                    <th>Value</th>
                 </tr>
             </thead>
             <tbody>
-                {#each rows as row}
+                {#each subAssets as subAsset}
                     <tr>
-                        <td>{row.asset_id}</td>
-                        <td>{row.asset_name}</td>
-                        <td>{row.asset_description}</td>
-                        <td>{row.asset_location}</td>
-                        <td>{row.current_apc}</td>
+                        <td>{subAsset.id}</td>
+                        <td>{subAsset.name}</td>
+                        <td>{subAsset.description}</td>
                     </tr>
                 {/each}
             </tbody>
         </table>
-    </div>
-    <div class="buttons">
-        <div class = "backButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-          </svg><button class="btn" on:click={back}>Back</button></div>
-        <div class = "addButton"><button class="btn" on:click={add}>Update</button></div>
-    </div>
+    {/if}
 </main>
 
 <style>
-    .bi,bi-arrow-left{
-        color: white ;
-    }
-    .btn{
+    h1,h2{
         color: white;
+        text-align: center;
     }
-    .table-container {
-        width: 80%;
-        height: 400px; 
-        margin: 0 auto;
-        overflow-y: auto; 
-        background: #d3d3d3;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        background-color: white;
+    }
+
+    tr:hover {
+        background-color: black;
+    }
+
+    .asset-details {
+        margin-bottom: 20px;
     }
 
     table {
@@ -80,7 +123,7 @@
     th, td {
         padding: 10px;
         text-align: left;
-        border: 1px solid #000;
+        border: 1px solid white;
     }
 
     th {
@@ -90,13 +133,6 @@
 
     tbody tr:nth-child(even) {
         background-color: #f2f2f2;
-    }
-    img{
-        margin-bottom: 100px;
-        margin-left: 1200px;
-        margin-top: 80px;
-        height: auto;
-        width: 100px;
     }
     main{
         flex-direction: row;

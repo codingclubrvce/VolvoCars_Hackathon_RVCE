@@ -9,18 +9,17 @@
             { id: 'addAsset', text: "Add Asset"},
             { id: 'addUnit', text: 'Add Unit' },
             { id: 'viewInvo', text: 'View Inventory' },
-            { id: 'updateAsset', text: 'Update Asset' },
             { id: 'assetVendorInfo', text: 'Vendor Info' }
         ] },
-        { id: 'home', text: 'SPARE PARTS', dropdownItems: [
+        { id: 'spares', text: 'SPARE PARTS', dropdownItems: [
             { id: 'addSpares', text: 'Add Spares' },
             { id: 'sparesInvo', text: 'Spares Inventory' },
             { id: 'spareVendorInfo', text: 'Vendor Info' }
         ] },
-        { id: 'home', text: 'MAINTAINANCE', dropdownItems: [
+        { id: 'maintainance', text: 'MAINTAINANCE', dropdownItems: [
             { id: 'schedule', text: 'Schedule Maintainence' }
         ] },
-        { id: 'home', text: 'REPORTS', dropdownItems: [
+        { id: 'reports', text: 'REPORTS', dropdownItems: [
             { id: 'assetMaster', text: 'Asset Master' },
             { id: 'sparesMaster', text: 'Spares Master' },
             { id: 'assetStatus', text: 'Asset Status' }

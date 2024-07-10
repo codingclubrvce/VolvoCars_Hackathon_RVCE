@@ -1,4 +1,17 @@
 import mysql.connector
+import os
+import subprocess
+
+
+def install_dependencies(requirements_file='requirements.txt'):
+    if os.path.exists(requirements_file):
+        try:
+            subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', '-r', requirements_file])
+            print("Dependencies installed successfully.")
+        except subprocess.CalledProcessError as err:
+            print(f"Error occurred while installing dependencies: {err}")
+    else:
+        print(f"{requirements_file} does not exist.")
 
 def initialize_databases():
     try:
@@ -105,3 +118,4 @@ def initialize_databases():
 
 if __name__ == "__main__":
     initialize_databases()
+    install_dependencies()
