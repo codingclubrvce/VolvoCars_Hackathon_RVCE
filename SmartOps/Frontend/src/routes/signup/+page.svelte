@@ -14,19 +14,19 @@
 
     const sendOTP = async () => {
         if (password === repeatpassword) {
-            const response = await fetch('http://localhost:5000/api/otp', {
+            const response = await fetch('http://localhost:5000/api/sendOTP', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email})
+                body: JSON.stringify({email, username})
             });
 
             const data = await response.json();
             
             if (response.ok) {
                 message = 'OTP Generated successfully!';
-                alert("Check you mail!");
+                alert(data.message);
             } else {
                 message = data.error || 'OTP Generation Failed, Check email';
             }
@@ -53,6 +53,7 @@
                 alert("hoorey!");
             } else {
                 message = data.error || 'Registration failed';
+                alert("Wrong OTP");
             }
         } else {
             message = "Passwords do not match";
@@ -73,7 +74,7 @@
                 <input type="password" placeholder="Repeat Password" bind:value={repeatpassword} required />
                 <input type="text" placeholder="OTP" bind:value={OTP} required>
                 <br>
-                <button type="button">Send OTP</button>
+                <button type="button" on:click={sendOTP}>Send OTP</button>
                 <button type="submit">Submit</button>
             </form>
         </div>

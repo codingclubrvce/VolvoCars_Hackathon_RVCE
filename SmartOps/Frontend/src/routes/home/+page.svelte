@@ -1,38 +1,38 @@
 <script>
     import {base} from '$app/paths';
     import logo from "../../lib/assets/images/logo.jpg";
-    import bg from "../../lib/assets/images/homebg.png"
+    import Authenticator from '../../lib/Components/authenticator.svelte';
+    import bg from "../../lib/assets/images/homebg.png";
+	import { text } from '@sveltejs/kit';
     let navigationLinks = [
-        { id: 'home', text: 'ASSET INVENTORY', dropdownItems: [
-            { id: 'addinvo', text: 'Add to Inventory' },
-            { id: 'viewinvo', text: 'View Inventory' },
-            { id: 'updateinvo', text: 'Update Inventory' },
+        { id: 'assets', text: 'ASSETS', dropdownItems: [
+            { id: 'addAsset', text: "Add Asset"},
+            { id: 'addUnit', text: 'Add Unit' },
+            { id: 'viewInvo', text: 'View Inventory' },
+            { id: 'updateAsset', text: 'Update Asset' },
             { id: 'assetVendorInfo', text: 'Vendor Info' }
         ] },
         { id: 'home', text: 'SPARE PARTS', dropdownItems: [
-            { id: 'home', text: 'Update Spares' },
-            { id: 'home', text: 'Issue & Transfer' },
-            { id: 'home', text: 'View Inventory' },
-            { id: 'home', text: 'Vendor Info' }
+            { id: 'addSpares', text: 'Add Spares' },
+            { id: 'sparesInvo', text: 'Spares Inventory' },
+            { id: 'spareVendorInfo', text: 'Vendor Info' }
         ] },
         { id: 'home', text: 'MAINTAINANCE', dropdownItems: [
-            { id: 'home', text: 'Maintenance Type' },
-            { id: 'home', text: 'Maintenance Plan' },
-            { id: 'home', text: 'Maintenance Schedule' },
-            { id: 'home', text: 'Maintenance Instructions' }
+            { id: 'schedule', text: 'Schedule Maintainence' }
         ] },
         { id: 'home', text: 'REPORTS', dropdownItems: [
-            { id: 'home', text: 'Asset Master' },
-            { id: 'home', text: 'Spares Master' },
-            { id: 'home', text: 'Asset Status' },
-            { id: 'home', text: 'Asset Issues' },
-            { id: 'home', text: 'Spares Complaints' }
+            { id: 'assetMaster', text: 'Asset Master' },
+            { id: 'sparesMaster', text: 'Spares Master' },
+            { id: 'assetStatus', text: 'Asset Status' }
         ] },
         {
             id: 'contact', text: "CONTACT"
         }
     ];
 </script>
+
+
+<!-- <Authenticator> -->
 <main>
 <header class="navbar">
     <img class="logo bottomcontent" src={logo} alt="Logo">
@@ -40,15 +40,15 @@
         {#each navigationLinks as link}
             {#if link.dropdownItems}
                 <div class="dropdown">
-                    <a href={'#' + link.id}>{link.text}</a>
+                    <a href={`${base}`}>{link.text}</a>
                     <div class="dropdown-content">
                         {#each link.dropdownItems as item}
-                            <a href={`${base}/${item.id}`}>{item.text}</a>
+                            <a href={`${base}/home/${link.id}/${item.id}`}>{item.text}</a>
                         {/each}
                     </div>
                 </div>
             {:else}
-            <a href={`${base}/${link.id}`}>{link.text}</a>
+            <a href={`${base}/home/${link.id}`}>{link.text}</a>
             {/if}
         {/each}
     </nav>
@@ -56,6 +56,7 @@
 <div class="background-image">
 </div>
 </main>
+<!-- </Authenticator> -->
 
 <style>
     .bottomcontent{
@@ -128,14 +129,6 @@
     }
 
     .dropdown-content {
-        /* display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1001;
-        top: 100%; /* Position below the main link 
-        left: 0; Align with the main link */
         display: none;
         position: absolute;
         top: 100%;

@@ -1,10 +1,11 @@
 {
 	"/": [],
-	"/addinvo": [],
-	"/assetVendorInfo": [],
-	"/contact": [],
 	"/home": [],
+	"/home/assets/addAsset": [],
+	"/home/assets/addUnit": [],
+	"/home/assets/assetVendorInfo": [],
+	"/home/assets/viewInvo": [],
+	"/home/contact": [],
 	"/signup": [],
-	"/updateinvo": [],
-	"/viewinvo": []
+	"/updateinvo": []
 }

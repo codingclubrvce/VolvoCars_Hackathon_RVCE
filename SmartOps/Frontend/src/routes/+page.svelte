@@ -3,6 +3,8 @@
   import { onMount } from 'svelte';
   import car from "../lib/assets/images/login-car.jpg"
 	import { goto } from '$app/navigation';
+  import { isAuthenticated } from '../stores/auth';
+
   
   let signup = false;
   let email = "";
@@ -43,6 +45,7 @@
         const data = await response.json();
         if (response.ok) {
                 message = 'User registered successfully!';
+                isAuthenticated.set(true);
                 goto(base+"/home");
             } else {
                 alert('Incorrect creds, Signup if you dont have one!');
